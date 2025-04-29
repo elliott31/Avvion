@@ -307,11 +307,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8845373160700903169, guid: 0bfc3c204e5d1704798b5d4c082b09fa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.9
+      value: 1.93
       objectReference: {fileID: 0}
     - target: {fileID: 8845373160700903169, guid: 0bfc3c204e5d1704798b5d4c082b09fa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -12.5
+      value: 7.95
       objectReference: {fileID: 0}
     - target: {fileID: 8845373160700903169, guid: 0bfc3c204e5d1704798b5d4c082b09fa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -511,7 +511,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &278876314
 RectTransform:
   m_ObjectHideFlags: 0
@@ -970,6 +970,37 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1850797775}
   m_SourcePrefab: {fileID: 100100000, guid: e2303281382d8ed4fa09b688a12fba0e, type: 3}
+--- !u!1 &1058190336
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1058190337}
+  m_Layer: 0
+  m_Name: Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1058190337
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058190336}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.03, y: -11.92, z: 0.7855053}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1154598120
 GameObject:
   m_ObjectHideFlags: 0
@@ -1083,9 +1114,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1154598120}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7a1270483ed6e845832067c51a402ad, type: 3}
+  m_Script: {fileID: 11500000, guid: f8a7b59256d625348ae2f084b5e46b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnPoint: {x: 0.9, y: -12.5, z: 0}
+  plane: {fileID: 1675130291}
 --- !u!1001 &1206138100
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1562,3 +1595,4 @@ SceneRoots:
   - {fileID: 413427021}
   - {fileID: 1154598124}
   - {fileID: 1456251492}
+  - {fileID: 1058190337}
