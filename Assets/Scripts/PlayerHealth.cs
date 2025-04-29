@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -6,6 +7,7 @@ public class PlayerHealth : MonoBehaviour
     public float MaxHealth;
     public static PlayerHealth instance;
     public GameObject gameOver;
+    public GameObject player;
     private void Awake()
     {
         instance = this;
@@ -24,6 +26,7 @@ public class PlayerHealth : MonoBehaviour
         if(health <= 0)
         {
             gameOver.SetActive(true);
+            player.SetActive(false);
         }
     }
     

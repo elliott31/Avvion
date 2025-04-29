@@ -51,6 +51,8 @@ MonoBehaviour:
   rb: {fileID: 2261455455838254815}
   vitesse: 10
   tempsPourDespawn: 1
+  ballCountText: {fileID: 2612916332978348076, guid: 41a0e6e038f011e479d9af8492d518c4, type: 3}
+  ballCount: 20
 --- !u!50 &2261455455838254815
 Rigidbody2D:
   serializedVersion: 5

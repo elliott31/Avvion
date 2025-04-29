@@ -4,7 +4,9 @@ public class quitAndOther : MonoBehaviour
 {
     public Vector3 spawnPoint;
     public GameObject plane;
+    public GameObject tousLesEnnemis;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     void Start()
     {
         
@@ -13,7 +15,11 @@ public class quitAndOther : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKey(KeyCode.R))
+        {
+
+            ReLaunchGame();
+        }
     }
     public void QuitGame()
     {
@@ -24,8 +30,13 @@ public class quitAndOther : MonoBehaviour
         SceneManager.LoadScene("JeuNiveau1");
 
     }
-    public void LaunchGame()
+    public void ReLaunchGame()
     {
         plane.transform.position = spawnPoint;
+        plane.SetActive(true);
+        PlayerHealth.instance.gameOver.SetActive(false);
+        PlayerHealth.instance.health = PlayerHealth.instance.MaxHealth;
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.name);
     }
 }
