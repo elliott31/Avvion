@@ -1,13 +1,19 @@
+using TMPro;
 using UnityEngine;
 
 public class AttackOfPlayer : MonoBehaviour
 {
     public GameObject ballePrefab;
-    public Transform shootPoint; // optional: where the bullet spawns
-
+    public Transform shootPoint;
+    public int ballCount = 20;
+    public TextMeshProUGUI ballCountText;
+    void Awake()
+    {
+        UpdateBallCountText();
+    }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && ballCount > 0)
         {
             GameObject bulletInstance = Instantiate(ballePrefab, shootPoint.position, shootPoint.rotation);
             Balle balleScript = bulletInstance.GetComponent<Balle>();
@@ -16,11 +22,16 @@ public class AttackOfPlayer : MonoBehaviour
             {
                 balleScript.Tire();
             }
-            else
-            {
-                Debug.LogError("No Balle script found on instantiated bullet!");
-            }
+
+            ballCount--;
+            UpdateBallCountText();
         }
     }
+
+    void UpdateBallCountText()
+    {
+        ballCountText.text = "" + ballCount;
+    }
 }
+
 

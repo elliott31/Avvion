@@ -5,6 +5,7 @@ public class quitAndOther : MonoBehaviour
     public Vector3 spawnPoint;
     public GameObject plane;
     public GameObject tousLesEnnemis;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     
     void Start()
@@ -19,15 +20,21 @@ public class quitAndOther : MonoBehaviour
         {
 
             ReLaunchGame();
+
         }
     }
     public void QuitGame()
     {
         Application.Quit();
     }
-    public void LauchScene()
+    public void LaunchLevel1()
     {
         SceneManager.LoadScene("JeuNiveau1");
+
+    }
+    public void LaunchMainMenu()
+    {
+        SceneManager.LoadScene("lancement");
 
     }
     public void ReLaunchGame()
@@ -38,5 +45,6 @@ public class quitAndOther : MonoBehaviour
         PlayerHealth.instance.health = PlayerHealth.instance.MaxHealth;
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name);
+        
     }
 }

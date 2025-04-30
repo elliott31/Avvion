@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -8,11 +10,19 @@ public class PlayerHealth : MonoBehaviour
     public static PlayerHealth instance;
     public GameObject gameOver;
     public GameObject player;
+    public TextMeshProUGUI vie;
+    public TextMeshProUGUI rPourRestart;
+    public TextMeshProUGUI balle;
+    public GameObject balleImage;
     private void Awake()
     {
         instance = this;
         MaxHealth = 100;
         health = MaxHealth;
+        rPourRestart.alpha = 1;
+        vie.alpha = 1;
+        balle.alpha = 1;
+        balleImage.SetActive(true);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,11 +33,17 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(health <= 0)
+        vie.text = health + "hp";
+        if (health <= 0)
         {
             gameOver.SetActive(true);
             player.SetActive(false);
+            rPourRestart.alpha = 0;
+            vie.alpha = 0;
+            balle.alpha = 0;
+            balleImage.SetActive(false);
         }
+        
     }
     
 }
