@@ -148,3 +148,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToDestroy: {fileID: 8781240038564512853}
+  lootable:
+  - {fileID: 930355680973539365, guid: a26843d63ab197642900dfdb38232c7b, type: 3}
+  dropChance: 0.5

@@ -24,7 +24,7 @@ public class PlayerHealth : MonoBehaviour
         balle.alpha = 1;
         balleImage.SetActive(true);
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     void Start()
     {
         

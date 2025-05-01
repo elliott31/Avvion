@@ -27,7 +27,7 @@ public class Balle : MonoBehaviour
     }
     public void Tire()
     {
-        Debug.Log("La balle a été tirée !");
+        
         // La balle avance toute seule vers l'avant
 
         rb.linearVelocity = transform.up * vitesse;
