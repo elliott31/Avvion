@@ -4,7 +4,11 @@ public class MovementPlane : MonoBehaviour
 {
     public float speed;
     public Rigidbody2D rb;
-
+    public static MovementPlane instance;
+    private void Awake()
+    {
+        instance = this;
+    }
     private Vector2 velocity = Vector2.zero;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

@@ -4,7 +4,6 @@ public class quitAndOther : MonoBehaviour
 {
     public Vector3 spawnPoint;
     public GameObject plane;
-    public GameObject tousLesEnnemis;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     
@@ -46,5 +45,9 @@ public class quitAndOther : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name);
         
+    }
+    public void NextLevel()
+    {                                                                                          
+        //aller au prochain niveau............. comment faire ? je ne sais point faire. on verra 
     }
 }

@@ -6,15 +6,18 @@ public class AttackOfPlayer : MonoBehaviour
     public GameObject ballePrefab;
     public Transform shootPoint;
     [HideInInspector]
-    public int ballCount = 2000;
+    public int ballCount;
     public TextMeshProUGUI ballCountText;
+    public static AttackOfPlayer instance;
     void Awake()
     {
+        instance = this;
+        ballCount = 0;
         UpdateBallCountText();
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && ballCount > 0 || (Input.GetKeyDown(KeyCode.X)) && ballCount > 0)
+        if (Input.GetKeyDown(KeyCode.Mouse0) || (Input.GetKeyDown(KeyCode.X)))
         {
             GameObject bulletInstance = Instantiate(ballePrefab, shootPoint.position, shootPoint.rotation);
             Balle balleScript = bulletInstance.GetComponent<Balle>();
@@ -24,7 +27,7 @@ public class AttackOfPlayer : MonoBehaviour
                 balleScript.Tire();
             }
 
-            ballCount--;
+            ballCount+= 1;
             UpdateBallCountText();
         }
     }

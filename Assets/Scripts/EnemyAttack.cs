@@ -5,6 +5,8 @@ public class EnemyAttack : MonoBehaviour
     public GameObject objectToDestroy;
     public GameObject[] lootable;
     public float dropChance;
+    public float speed;
+    public Rigidbody2D rb;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,21 +14,28 @@ public class EnemyAttack : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        rb.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(-speed, 0);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+            
             PlayerHealth.instance.health -= 5f;
             TryDropLoot();
             Destroy(objectToDestroy);
         }
         else if (collision.CompareTag("Balle"))
         {
+            
             TryDropLoot();
+            Destroy(objectToDestroy);
+        }
+        else if(collision.CompareTag("Mur"))
+        {
+            
             Destroy(objectToDestroy);
         }
     }
@@ -40,4 +49,5 @@ public class EnemyAttack : MonoBehaviour
 
         Instantiate(lootToDrop, transform.position, Quaternion.identity);
     }
+    
 }
