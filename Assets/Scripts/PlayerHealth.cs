@@ -14,6 +14,9 @@ public class PlayerHealth : MonoBehaviour
     public TextMeshProUGUI rPourRestart;
     public TextMeshProUGUI balle;
     public GameObject balleImage;
+    public GameObject winTrigger; 
+    [HideInInspector]
+    public bool dead;
     private void Awake()
     {
         instance = this;
@@ -36,12 +39,10 @@ public class PlayerHealth : MonoBehaviour
         vie.text = health + "hp";
         if (health <= 0)
         {
+            dead = true;
             gameOver.SetActive(true);
             player.SetActive(false);
-            rPourRestart.alpha = 0;
-            vie.alpha = 0;
-            balle.alpha = 0;
-            balleImage.SetActive(false);
+            winTrigger.SetActive(false);
         }
         
     }

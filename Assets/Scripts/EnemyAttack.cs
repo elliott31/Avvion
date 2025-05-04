@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
@@ -7,8 +8,9 @@ public class EnemyAttack : MonoBehaviour
     public float dropChance;
     public float speed;
     public Rigidbody2D rb;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Update()
     {
         
     }
@@ -26,10 +28,11 @@ public class EnemyAttack : MonoBehaviour
             PlayerHealth.instance.health -= 5f;
             TryDropLoot();
             Destroy(objectToDestroy);
+            GameManager.instance.score += 10f;
         }
         else if (collision.CompareTag("Balle"))
         {
-            
+            GameManager.instance.score += 10f;
             TryDropLoot();
             Destroy(objectToDestroy);
         }

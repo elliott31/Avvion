@@ -1,16 +1,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class quitAndOther : MonoBehaviour
+public class QuitAndOther : MonoBehaviour
 {
     public Vector3 spawnPoint;
     public GameObject plane;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     
-    void Start()
-    {
-        
-    }
+    
 
     // Update is called once per frame
     void Update()
@@ -44,7 +41,7 @@ public class quitAndOther : MonoBehaviour
         PlayerHealth.instance.health = PlayerHealth.instance.MaxHealth;
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name);
-        
+        GameManager.instance.win.SetActive(false);
     }
     public void NextLevel()
     {                                                                                          
