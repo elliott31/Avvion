@@ -17,7 +17,8 @@ public class AttackOfPlayer : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && GameManager.instance.winTrigger == false && PlayerHealth.instance.dead == false || (Input.GetKeyDown(KeyCode.X)) && GameManager.instance.winTrigger == false && PlayerHealth.instance.dead == false)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && GameManager.instance.winTrigger == false && PlayerHealth.instance.dead == false || 
+            (Input.GetKeyDown(KeyCode.X)) && GameManager.instance.winTrigger == false && PlayerHealth.instance.dead == false)
         {
             GameObject bulletInstance = Instantiate(ballePrefab, shootPoint.position, shootPoint.rotation);
             Balle balleScript = bulletInstance.GetComponent<Balle>();

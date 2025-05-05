@@ -28,12 +28,7 @@ public class PlayerHealth : MonoBehaviour
         balleImage.SetActive(true);
     }
     
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    
     void Update()
     {
         vie.text = health + "hp";

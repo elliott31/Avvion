@@ -8,18 +8,26 @@ public class EnemyAttack : MonoBehaviour
     public float dropChance;
     public float speed;
     public Rigidbody2D rb;
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Update()
+
+
+
+    void Awake()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        rb.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(-speed, 0);
+        bool isWaveActive = QuitAndOther.instance.winWave1.activeInHierarchy;
+
+        speed = isWaveActive ? 0 : 2;
+
+        
+
+        rb.linearVelocity = new Vector2(-speed, 0);
     }
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))

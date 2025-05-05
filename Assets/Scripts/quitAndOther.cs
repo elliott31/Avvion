@@ -4,12 +4,17 @@ public class QuitAndOther : MonoBehaviour
 {
     public Vector3 spawnPoint;
     public GameObject plane;
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    
-    
+    public GameObject winWave1;
+    public static QuitAndOther instance;
+    public GameObject winTriggerWave1;
+    private void Awake()
+    {
+        instance = this;
+    }
 
-    // Update is called once per frame
+
+
+
     void Update()
     {
         if (Input.GetKey(KeyCode.R))
@@ -44,7 +49,14 @@ public class QuitAndOther : MonoBehaviour
         GameManager.instance.win.SetActive(false);
     }
     public void NextLevel()
-    {                                                                                          
-        //aller au prochain niveau............. comment faire ? je ne sais point faire. on verra 
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex + 1);
+    }
+    public void ContinueToWave2()
+    {
+        Destroy(winTriggerWave1);
+        winWave1.SetActive(false);
+        Debug.Log("bouton apuiado");
     }
 }

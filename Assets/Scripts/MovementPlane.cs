@@ -28,7 +28,8 @@ public class MovementPlane : MonoBehaviour
     }
     void MovePlayer(float horizontalMovement,float verticalMovement)
     {
-        Vector2 targetVelocity = new Vector2(horizontalMovement, verticalMovement);
+        Vector2 targetVelocity = new(horizontalMovement, verticalMovement);
+
         rb.linearVelocity = Vector2.SmoothDamp(rb.linearVelocity, targetVelocity, ref velocity, 0.05f);
     }
 }
