@@ -24,6 +24,9 @@ public class Balle : MonoBehaviour
         rb.linearVelocity = transform.up * vitesse;
         
     }
-    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Destroy(gameObject);
+    }
 }
 

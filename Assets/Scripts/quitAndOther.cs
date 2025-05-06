@@ -55,8 +55,12 @@ public class QuitAndOther : MonoBehaviour
     }
     public void ContinueToWave2()
     {
+        
         Destroy(winTriggerWave1);
+        GameManager.instance.winTrigger = false;
+        
         winWave1.SetActive(false);
-        Debug.Log("bouton apuiado");
+        plane.SetActive(true);
+        
     }
 }
